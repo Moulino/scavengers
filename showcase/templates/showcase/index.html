@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Monopage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-black text-white fixed top-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo et Titre -->
+                <div class="flex items-center">
+                    <img src="{% static 'showcase/images/logo.png' %}" alt="Logo de Scavengers" class="h-10 mr-3">
+                    <h1 class="text-lg font-bold">Scavengers</h1>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="#bieres" class="hover:text-gray-400">Bieres</a>
+                    <a href="#histoire" class="hover:text-gray-400">Histoire</a>
+                    <a href="#contact" class="hover:text-gray-400">Contact</a>
+                </div>
+
+                <!-- Menu Mobile (Hamburger) -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Ouvrir le menu">
+                    <span class="text-3xl">&#9776;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Liste) -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center py-4 space-y-2 bg-black text-white">
+            <a href="#bieres" class="hover:text-gray-400">Bieres</a>
+            <a href="#histoire" class="hover:text-gray-400">Histoire</a>
+            <a href="#contact" class="hover:text-gray-400">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Carrousel -->
+    <div class="relative w-full mt-16">
+        <div class="w-full h-64 overflow-hidden relative">
+            <div id="carousel" class="flex w-full transition-transform duration-500">
+                <img src="https://source.unsplash.com/800x400/?beer" class="w-full h-64 object-cover" alt="Image 1">
+                <img src="https://source.unsplash.com/800x400/?brewery" class="w-full h-64 object-cover" alt="Image 2">
+                <img src="https://source.unsplash.com/800x400/?bar" class="w-full h-64 object-cover" alt="Image 3">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sections -->
+    <section id="bieres" class="h-auto py-12 bg-gray-300 flex flex-col items-center">
+        <h2 class="text-3xl font-bold mb-6">Bieres</h2>
+        <div class="w-full max-w-6xl mx-auto px-4 space-y-6">
+            <div class="bg-white p-4 rounded-lg shadow-md text-center w-full">
+                <img src="https://source.unsplash.com/800x600/?blonde-beer" alt="Bière Blonde" class="w-full h-64 object-cover rounded">
+                <h3 class="text-xl font-bold mt-4">Bière Blonde</h3>
+                <p class="text-gray-600">Une bière légère et rafraîchissante avec des notes fruitées.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center w-full">
+                <img src="https://source.unsplash.com/800x600/?amber-beer" alt="Bière Ambrée" class="w-full h-64 object-cover rounded">
+                <h3 class="text-xl font-bold mt-4">Bière Ambrée</h3>
+                <p class="text-gray-600">Une bière aux saveurs caramélisées avec une belle rondeur en bouche.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md text-center w-full">
+                <img src="https://source.unsplash.com/800x600/?dark-beer" alt="Bière Brune" class="w-full h-64 object-cover rounded">
+                <h3 class="text-xl font-bold mt-4">Bière Brune</h3>
+                <p class="text-gray-600">Une bière intense aux arômes torréfiés et chocolatés.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Histoire -->
+    <section id="histoire" class="h-auto py-12 bg-gray-200 flex flex-col items-center">
+        <h2 class="text-3xl font-bold mb-6">Notre Histoire</h2>
+        <div class="w-full max-w-4xl mx-auto px-4 text-center">
+            <p class="text-gray-700">Depuis des décennies, nous brassons nos bières avec passion et savoir-faire. Chaque recette raconte une histoire, un héritage de saveurs uniques et authentiques.</p>
+            <img src="https://source.unsplash.com/800x600/?brewery-history" alt="Notre Histoire" class="w-full h-64 object-cover rounded mt-6">
+        </div>
+    </section>
+    
+    <!-- Section Contact avec Formulaire -->
+    <section id="contact" class="h-screen flex flex-col items-center justify-center bg-gray-400 p-6">
+        <h2 class="text-3xl font-bold mb-6">Contact</h2>
+        <form class="bg-white p-6 rounded-lg shadow-md w-full max-w-lg">
+            <label class="block mb-2 font-semibold">Nom</label>
+            <input type="text" class="w-full p-2 border border-gray-300 rounded mb-4" placeholder="Votre nom" required>
+            <label class="block mb-2 font-semibold">Email</label>
+            <input type="email" class="w-full p-2 border border-gray-300 rounded mb-4" placeholder="Votre email" required>
+            <label class="block mb-2 font-semibold">Message</label>
+            <textarea class="w-full p-2 border border-gray-300 rounded mb-4" placeholder="Votre message" rows="4" required></textarea>
+            <button type="submit" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-700">Envoyer</button>
+        </form>
+    </section>
+</body>
+</html>
