@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '*=*=zh$3$4b19@h*jn5mnh!07dw3fd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['scavengers.beer', 'www.scavengers.beer']
+ALLOWED_HOSTS = ['scavengers.beer', 'www.scavengers.beer', 'maint.scavengers-craft-beer.fr']
 
 
 # Application definition
