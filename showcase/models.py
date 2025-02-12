@@ -37,3 +37,29 @@ class Biere(models.Model):
 
     def __str__(self):
         return f"{self.nom} - {self.type}"
+
+class PointDeVente(models.Model):
+    TYPE_CHOICES = [
+        ('BAR', 'Bar'),
+        ('CAVE', 'Cave à bières'),
+        ('SHOP', 'Boutique'),
+        ('AUTRE', 'Autre'),
+    ]
+    
+    nom = models.CharField(max_length=100, verbose_name="Nom de l'établissement")
+    type = models.CharField(max_length=20, choices=TYPE_CHOICES, default='BAR')
+    adresse = models.CharField(max_length=200)
+    code_postal = models.CharField(max_length=5)
+    ville = models.CharField(max_length=100)
+    horaires = models.TextField(blank=True, null=True, help_text="Horaires d'ouverture")
+    lien = models.URLField(blank=True, null=True, verbose_name="Lien vers le site web")
+    actif = models.BooleanField(default=True)
+    ordre = models.IntegerField(default=0, help_text="Ordre d'affichage")
+    
+    class Meta:
+        verbose_name = "Point de vente"
+        verbose_name_plural = "Points de vente"
+        ordering = ['ordre', 'nom']
+    
+    def __str__(self):
+        return f"{self.nom} ({self.ville})"
