@@ -1,3 +1,4 @@
+{% load showcase_filters %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -132,7 +133,7 @@
 
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
                   url("{% static 'showcase/images/affiche.jpg' %}");
       background-size: cover;
       background-position: center;
@@ -193,7 +194,7 @@
           rgba(44, 24, 16, 0.95),
           rgba(44, 24, 16, 0.98)
         ),
-        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23CD7F32' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23CD7F32' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E"),
         url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B4513' fill-opacity='0.04'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
@@ -224,6 +225,8 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     .potion-card:hover {
@@ -244,10 +247,8 @@
 
     .potion-image {
       width: 100%;
-      height: 500px;
+      height: 400px;
       object-fit: cover;
-      background-color: rgba(0,0,0,0.3);
-      padding: 1rem;
       transition: transform 0.3s ease;
     }
 
@@ -267,6 +268,100 @@
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: var(--primary-color);
+    }
+
+    .potion-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      padding: 0 1rem;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .stat-label {
+      width: 80px;
+      color: var(--primary-color);
+      font-family: 'MedievalSharp', cursive;
+      font-size: 0.8rem;
+      text-align: right;
+    }
+
+    .stat-container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .stat-graduations {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2px;
+      font-size: 0.7rem;
+      color: var(--text-color);
+      opacity: 0.7;
+    }
+
+    .stat-bar {
+      height: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .stat-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: linear-gradient(90deg, 
+          #FFD700,  /* Or brillant pour valeur faible */
+          #DAA520,  /* Or plus soutenu pour valeur moyenne */
+          #B8860B   /* Or foncé pour valeur forte */
+      );
+      box-shadow: 
+          0 0 10px rgba(255, 215, 0, 0.5),
+          inset 0 0 5px rgba(255, 255, 255, 0.5);
+      transition: width 1s ease-out;
+      border-radius: 4px;
+    }
+
+    .stat-value {
+      text-align: right;
+      color: var(--text-color);
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-top: 0.25rem;
+    }
+
+    .stat-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+      );
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      to {
+        left: 100%;
+      }
     }
 
     .potion-description {
@@ -297,7 +392,7 @@
       }
 
       .potion-image {
-        height: 400px;
+        height: 300px;
       }
     }
 
@@ -640,31 +735,112 @@
       background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
       transform: translateY(-2px);
     }
+
+    .potion-story {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--accent-color);
+    }
+
+    .story-text {
+      color: var(--text-color);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .story-separator {
+      width: 50px;
+      height: 2px;
+      background: var(--primary-color);
+      margin: 1rem auto;
+    }
+
+    .story-lore {
+      color: var(--primary-color);
+      font-family: 'MedievalSharp', cursive;
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-align: justify;
+      padding: 0 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .story-lore {
+        padding: 0 0.5rem;
+      }
+    }
+
+    /* Style différent pour les barres d'IBU */
+    .stat-item:nth-child(2) .stat-fill {
+        background: linear-gradient(90deg, 
+            #4169E1,  /* Bleu royal pour IBU faible */
+            #9932CC,  /* Violet pour IBU moyen */
+            #FF4500   /* Rouge orangé pour IBU fort */
+        );
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .logo-link {
+      cursor: pointer;
+      display: block;
+    }
   </style>
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo-container">
-        <img src="{% static 'showcase/images/logo.png' %}" alt="Logo" class="logo">
+        <a href="#" class="logo-link">
+          <img src="{% static 'showcase/images/logo.png' %}" alt="Logo" class="logo">
+        </a>
       </div>
       <div class="nav-links">
-        <a href="#taverne">La Taverne</a>
         <a href="#legende">La Légende</a>
-        <a href="#brassage">L'Art du Brassage</a>
         <a href="#potions">Nos Potions</a>
+        <a href="#evenements">Événements</a>
         <a href="#quete">Partir en Quête</a>
       </div>
-      <a href="https://boutique-externe.com" class="shop-button" target="_blank">
-        Boutique en ligne
-      </a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="hero-content">
       <h1>Élixirs Légendaires en Canette</h1>
-      <a href="#potions" class="discover-more">Découvrir la Légende</a>
+      <a href="https://easybeer.shop/boutique/scavengers-craft-beer/" class="discover-more" target="_blank">Boutique en ligne</a>
     </div>
   </section>
 
@@ -692,37 +868,57 @@
   </section>
 
   <section id="potions" class="potions-section">
-    <h2 class="section-title">Potions Éphémères</h2>
+    <h2 class="section-title">Nos Élixirs Légendaires</h2>
     <div class="potions-grid">
+      {% for biere in bieres %}
       <div class="potion-card">
-        <div class="potion-tag">POTION AMBRÉE DE KAMPOT</div>
-        <img src="{% static 'showcase/images/pale_ale.jpg' %}" alt="Insert Coin" class="potion-image">
+        <div class="potion-tag">{{ biere.type }}</div>
+        <img src="{{ biere.image.url }}" alt="{{ biere.nom }}" class="potion-image">
         <div class="potion-info">
-          <h3 class="potion-title">INSERT COIN</h3>
-          <p class="potion-description">ÉLIXIR AMBRÉ 44CL - PUISSANCE 5.7</p>
+          <h3 class="potion-title">{{ biere.nom }}</h3>
+          <div class="potion-stats">
+            <div class="stat-item">
+              <div class="stat-label">ALCOOL</div>
+              <div class="stat-container">
+                <div class="stat-graduations">
+                  <span>0°</span>
+                  <span>3°</span>
+                  <span>6°</span>
+                  <span>9°</span>
+                </div>
+                <div class="stat-bar">
+                  <div class="stat-fill" style="width: {{ biere.degre|multiply:6.67 }}%"></div>
+                </div>
+                <div class="stat-value">{{ biere.degre }}°</div>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">AMERTUME</div>
+              <div class="stat-container">
+                <div class="stat-graduations">
+                  <span>0</span>
+                  <span>40</span>
+                  <span>80</span>
+                  <span>120</span>
+                </div>
+                <div class="stat-bar">
+                  <div class="stat-fill" style="width: {{ biere.ibu|divide:1.2 }}%"></div>
+                </div>
+                <div class="stat-value">{{ biere.ibu }} IBU</div>
+              </div>
+            </div>
+          </div>
+          <div class="potion-story">
+            <p class="story-text">{{ biere.description }}</p>
+            <div class="story-separator"></div>
+            <p class="story-lore">{{ biere.histoire }}</p>
+          </div>
         </div>
       </div>
-
-      <div class="potion-card">
-        <div class="potion-tag">POTION HÉROÏQUE BRUMEUSE</div>
-        <img src="{% static 'showcase/images/raccoon.jpg' %}" alt="Final Hazy Tasty" class="potion-image">
-        <div class="potion-info">
-          <h3 class="potion-title">FINAL HAZY TASTY</h3>
-          <p class="potion-description">ÉLIXIR DORÉ 44CL - PUISSANCE 6</p>
-        </div>
-      </div>
-
-      <div class="potion-card">
-        <div class="potion-tag">POTION SAUVAGE IMPÉRIALE</div>
-        <img src="{% static 'showcase/images/boar.jpg' %}" alt="Wild Boar" class="potion-image">
-        <div class="potion-info">
-          <h3 class="potion-title">WILD BOAR</h3>
-          <p class="potion-description">ÉLIXIR NOIR 44CL - PUISSANCE 8.5</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
     <div class="text-center" style="margin-top: 3rem;">
-      <a href="https://boutique-externe.com" class="discover-more" target="_blank">
+      <a href="https://easybeer.shop/boutique/scavengers-craft-beer/" class="discover-more" target="_blank">
         Accéder à la boutique en ligne
       </a>
     </div>
@@ -732,38 +928,28 @@
     <div class="calendar-container">
       <h2 class="calendar-title">Chroniques des Événements à Venir</h2>
       <div class="events-grid">
-        <div class="event-card">
-          <div class="event-date">15 Juin 2024</div>
-          <h3 class="event-title">Festival des Brasseurs</h3>
-          <div class="event-location">Place Saint-Marc, Rouen</div>
-          <p class="event-description">
-            Rejoignez-nous pour une journée exceptionnelle de dégustation de nos dernières créations. 
-            Animations et surprises vous attendent !
-          </p>
-          <a href="#" class="event-link">Plus d'informations</a>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date">22 Juillet 2024</div>
-          <h3 class="event-title">Soirée Médiévale</h3>
-          <div class="event-location">Taverne du Dragon, Rouen</div>
-          <p class="event-description">
-            Une soirée unique où nos élixirs couleront à flots, accompagnés de musique médiévale 
-            et de mets d'époque.
-          </p>
-          <a href="#" class="event-link">Plus d'informations</a>
-        </div>
-
-        <div class="event-card">
-          <div class="event-date">10 Août 2024</div>
-          <h3 class="event-title">Marché Artisanal</h3>
-          <div class="event-location">Place du Vieux Marché, Rouen</div>
-          <p class="event-description">
-            Venez découvrir nos bières artisanales parmi une sélection d'artisans locaux. 
-            Démonstrations et dégustations au programme.
-          </p>
-          <a href="#" class="event-link">Plus d'informations</a>
-        </div>
+        {% if evenements %}
+          {% for evenement in evenements %}
+            <div class="event-card">
+              <div class="event-date">{{ evenement.date|date:"j F Y" }}</div>
+              <h3 class="event-title">{{ evenement.titre }}</h3>
+              <div class="event-location">{{ evenement.lieu }}</div>
+              <p class="event-description">
+                {{ evenement.description }}
+              </p>
+              {% if evenement.lien_info and evenement.afficher_lien %}
+                <a href="{{ evenement.lien_info }}" class="event-link" target="_blank">Plus d'informations</a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="event-card" style="grid-column: 1 / -1; text-align: center;">
+            <h3 class="event-title">Aucun événement à venir</h3>
+            <p class="event-description">
+              Revenez bientôt pour découvrir nos prochains événements !
+            </p>
+          </div>
+        {% endif %}
       </div>
     </div>
   </section>
@@ -794,14 +980,82 @@
     </div>
   </section>
 
+  <a href="#" class="scroll-top" id="scrollTopBtn" title="Retour en haut">
+    ↑
+  </a>
+
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gestion du bouton de retour en haut et du logo
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        const logoLink = document.querySelector('.logo-link');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
         });
-      });
+
+        // Fonction de défilement vers le haut
+        function scrollToTop(duration) {
+            const start = window.pageYOffset;
+            const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+            function scroll() {
+                const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+                const time = Math.min(1, ((now - startTime) / duration));
+                const easeInOutQuart = t => t < .5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+                
+                window.scrollTo(0, start * (1 - easeInOutQuart(time)));
+
+                if (time < 1) {
+                    requestAnimationFrame(scroll);
+                }
+            }
+
+            requestAnimationFrame(scroll);
+        }
+
+        // Défilement fluide pour les liens du menu avec offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    // Pour le logo et le bouton de retour en haut
+                    scrollToTop(2000);
+                } else {
+                    const targetElement = document.querySelector(targetId);
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 30;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 2000;
+                    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+                    function scrollToSection() {
+                        const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+                        const time = Math.min(1, ((now - startTime) / duration));
+                        const easeInOutQuart = t => t < .5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+                        
+                        window.scrollTo(0, startPosition + (distance * easeInOutQuart(time)));
+
+                        if (time < 1) {
+                            requestAnimationFrame(scrollToSection);
+                        }
+                    }
+
+                    requestAnimationFrame(scrollToSection);
+                }
+            });
+        });
+
+        // Utiliser la même fonction pour le bouton de retour en haut
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToTop(1500);
+        });
     });
   </script>
 </body>

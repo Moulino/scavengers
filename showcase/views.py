@@ -1,17 +1,18 @@
 from django.shortcuts import render
-from .models import Event, Beer
 from django.utils import timezone
+from .models import Biere, Evenement
+from datetime import date
 
 def index(request):
-    upcoming_events = Event.objects.filter(
-        is_active=True,
-        date__gte=timezone.now()
-    ).order_by('date')[:3]
+    evenements = Evenement.objects.filter(
+        est_actif=True,
+        date__gte=date.today()
+    ).order_by('date')[:3]  # Limite aux 3 prochains événements
     
-    beers = Beer.objects.filter(is_available=True)
+    bieres = Biere.objects.filter(est_disponible=True)
     
     context = {
-        'upcoming_events': upcoming_events,
-        'beers': beers,
+        'evenements': evenements,
+        'bieres': bieres,
     }
     return render(request, 'showcase/index.html', context)

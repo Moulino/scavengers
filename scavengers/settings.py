@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '*=*=zh$3$4b19@h*jn5mnh!07dw3fd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['scavengers.beer', 'www.scavengers.beer', 'maint.scavengers-craft-beer.fr', 'dev.scavengers.beer']
+ALLOWED_HOSTS = ['scavengers.beer', 'www.scavengers.beer', 'maint.scavengers-craft-beer.fr', 'dev.scavengers.beer', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -138,15 +138,28 @@ MEDIA_URL = 'media/'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SILENCED_SYSTEM_CHECKS = ['security.W019']
 
-# Sécurité
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_SECONDS = 31536000  # 1 an
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+# Configuration SSL/HTTPS
+if DEBUG:
+    print("DEBUG is True")
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_PROXY_SSL_HEADER = None
+    USE_X_FORWARDED_HOST = False
+    USE_X_FORWARDED_PORT = False
+    SECURE_HSTS_SECONDS = 0      # Désactive HSTS en mode DEBUG
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_HSTS_PRELOAD = False
+else:
+    print("DEBUG is False")
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_HSTS_SECONDS = 31536000  # 1 an
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
 
 # Configuration du serveur de messagerie
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

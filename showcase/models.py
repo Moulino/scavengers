@@ -1,47 +1,39 @@
 from django.db import models
 from django.utils import timezone
 
-class Event(models.Model):
-    title = models.CharField(max_length=200, verbose_name="Titre")
-    date = models.DateTimeField(verbose_name="Date de l'événement")
-    location = models.CharField(max_length=200, verbose_name="Lieu")
-    description = models.TextField(verbose_name="Description")
-    link = models.URLField(blank=True, verbose_name="Lien externe")
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    is_active = models.BooleanField(default=True, verbose_name="Actif")
+class Evenement(models.Model):
+    titre = models.CharField(max_length=200)
+    date = models.DateField()
+    lieu = models.CharField(max_length=200)
+    description = models.TextField()
+    lien_info = models.URLField(blank=True, null=True, verbose_name="Lien pour plus d'informations")
+    afficher_lien = models.BooleanField(default=True, verbose_name="Afficher le lien 'Plus d'informations'")
+    est_actif = models.BooleanField(default=True)
 
     class Meta:
+        ordering = ['date']
         verbose_name = "Événement"
         verbose_name_plural = "Événements"
-        ordering = ['date']
 
     def __str__(self):
-        return f"{self.title} - {self.date.strftime('%d/%m/%Y')}"
+        return f"{self.titre} - {self.date.strftime('%d/%m/%Y')}"
 
-    @property
-    def is_past(self):
-        return self.date < timezone.now()
-
-class Beer(models.Model):
-    name = models.CharField(max_length=200, verbose_name="Nom")
-    subtitle = models.CharField(max_length=200, verbose_name="Sous-titre")
-    description = models.TextField(verbose_name="Description")
-    image = models.ImageField(upload_to='beers/', verbose_name="Image")
-    alcohol_content = models.DecimalField(
-        max_digits=3, 
-        decimal_places=1, 
-        verbose_name="Degré d'alcool"
-    )
-    volume = models.IntegerField(verbose_name="Volume (cl)")
-    is_available = models.BooleanField(default=True, verbose_name="Disponible")
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+class Biere(models.Model):
+    nom = models.CharField(max_length=200)
+    description = models.TextField()
+    histoire = models.TextField(help_text="L'histoire derrière cette bière")
+    type = models.CharField(max_length=100)
+    degre = models.DecimalField(max_digits=3, decimal_places=1, verbose_name="Degré d'alcool")
+    ibu = models.IntegerField(verbose_name="IBU (International Bitterness Units)", help_text="Indice d'amertume")
+    volume = models.IntegerField(help_text="Volume en cl")
+    est_disponible = models.BooleanField(default=True)
+    image = models.ImageField(upload_to='bieres/')
+    ordre_affichage = models.IntegerField(default=0)
 
     class Meta:
+        ordering = ['ordre_affichage']
         verbose_name = "Bière"
         verbose_name_plural = "Bières"
-        ordering = ['name']
 
     def __str__(self):
-        return self.name
+        return f"{self.nom} - {self.type}"
