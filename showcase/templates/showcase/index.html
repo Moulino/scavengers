@@ -876,15 +876,6 @@
       }
     }
 
-    /* Style différent pour les barres d'IBU */
-    .stat-item:nth-child(2) .stat-fill {
-        background: linear-gradient(90deg, 
-            #4169E1,  /* Bleu royal pour IBU faible */
-            #9932CC,  /* Violet pour IBU moyen */
-            #FF4500   /* Rouge orangé pour IBU fort */
-        );
-    }
-
     .scroll-top {
       position: fixed;
       bottom: 30px;
@@ -991,12 +982,12 @@
               <div class="stat-container">
                 <div class="stat-graduations">
                   <span>0°</span>
-                  <span>3°</span>
-                  <span>6°</span>
-                  <span>9°</span>
+                  <span>4°</span>
+                  <span>8°</span>
+                  <span>12°</span>
                 </div>
                 <div class="stat-bar">
-                  <div class="stat-fill" style="width: {{ biere.degre|multiply:6.67 }}%"></div>
+                  <div class="stat-fill" style="width: {{ biere.degre|multiply:8.33 }}%"></div>
                 </div>
                 <div class="stat-value">{{ biere.degre }}°</div>
               </div>
