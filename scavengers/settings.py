@@ -140,7 +140,6 @@ SILENCED_SYSTEM_CHECKS = ['security.W019']
 
 # Configuration SSL/HTTPS
 if DEBUG:
-    print("DEBUG is True")
     SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
@@ -151,7 +150,6 @@ if DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = False
     SECURE_HSTS_PRELOAD = False
 else:
-    print("DEBUG is False")
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True

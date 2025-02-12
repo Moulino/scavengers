@@ -89,4 +89,22 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         });
     });
+
+    // Vérification de l'âge
+    const ageGate = document.getElementById('age-verification');
+    const ageConfirm = document.getElementById('age-confirm');
+    
+    // Vérifie si l'utilisateur a déjà confirmé son âge
+    if (!localStorage.getItem('ageVerified')) {
+        document.body.style.overflow = 'hidden';
+        ageGate.style.display = 'flex';
+    } else {
+        ageGate.style.display = 'none';
+    }
+
+    ageConfirm.addEventListener('click', function() {
+        localStorage.setItem('ageVerified', 'true');
+        ageGate.style.display = 'none';
+        document.body.style.overflow = '';
+    });
 });
